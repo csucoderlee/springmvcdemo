@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.csu.coderlee</groupId>
+    <artifactId>springmvcdemo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+        <org.springframework.version>4.2.3.RELEASE</org.springframework.version>
+        <swagger.springmvc.version>0.5.3</swagger.springmvc.version>
+        <jackson.version>2.2.2</jackson.version>
+        <!-- 9.3.11.v20160721版本的jetty, 会报错org/eclipse/jetty/server/Handler : Unsupported major.minor version 52.0 52.0对应jdk1.8-->
+        <jetty.version>8.1.10.v20130312</jetty.version>
+    </properties>
+
+    <dependencies>
+        <!-- scope:provided 只在编译和测试使用, 因为tomcat容器中自带servlet, 项目启动时会与pom中的servlet起冲突 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- spring mvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
